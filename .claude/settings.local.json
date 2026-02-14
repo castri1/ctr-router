@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version:*)",
+      "Bash(node --experimental-strip-types --test:*)",
+      "Bash(npx @biomejs/biome check:*)",
+      "Bash(npm test:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}

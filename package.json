@@ -1,0 +1,37 @@
+{
+  "name": "ctr-router",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A minimalistic router for AWS Lambda functions",
+  "keywords": [
+    "router"
+  ],
+  "author": "Daniel Castrillon <daniel@melonn.com>",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "test": "jest",
+    "prepublishOnly": "npm run build",
+    "check:types": "tsc --noEmit",
+    "check": "biome check --write",
+    "clean": "rimraf node_modules"
+  },
+  "dependencies": {
+    "aws-lambda": "^1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.15",
+    "@types/aws-lambda": "^8",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25",
+    "jest": "^29.7.0",
+    "rimraf": "^6.1.2",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
+  }
+}
