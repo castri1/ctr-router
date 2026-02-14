@@ -6,7 +6,7 @@ A minimalistic Express-like router for AWS Lambda functions behind API Gateway. 
 
 ```ts
 // routes.ts
-import { App, Router, type Request, type Response } from '@workspace/ctr-router';
+import { App, Router, type Request, type Response } from 'ctr-router';
 
 const app = new App();
 
