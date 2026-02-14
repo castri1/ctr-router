@@ -6,17 +6,26 @@
   "keywords": [
     "router"
   ],
-  "author": "Daniel Castrillon <daniel@melonn.com>",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "author": "Daniel Castrillon <castri1@hotmail.com>",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "build": "tsup",
+    "prepare": "tsup",
     "test": "jest",
     "prepublishOnly": "npm run build",
-    "check:types": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "check": "biome check --write",
     "clean": "rimraf node_modules"
   },
@@ -32,6 +41,7 @@
     "rimraf": "^6.1.2",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
+    "tsup": "^8.5.1",
     "typescript": "^5"
   },
   "publishConfig": {
